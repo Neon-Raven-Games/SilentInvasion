@@ -243,7 +243,6 @@ public class DevController : MonoBehaviour
 
     private void HandleRotation()
     {
-        Debug.Log($"Rotation Input: {_lookInput.x}");
         if (Mathf.Abs(_lookInput.x) < analogThreshold)
         {
             if (rotationMode == RotationMode.Smooth) _vignetteController.StopRotationLerp();
@@ -277,7 +276,6 @@ public class DevController : MonoBehaviour
 
     private void HandleMovement()
     {
-        Debug.Log($"Move Input: {_moveInput.x}, {_moveInput.y}");
         if (Mathf.Abs(_moveInput.x) <= analogThreshold) _moveInput.x = 0;
         if (Mathf.Abs(_moveInput.y) <= analogThreshold) _moveInput.y = 0;
         if (_moveInput == Vector2.zero)
